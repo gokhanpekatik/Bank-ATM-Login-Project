@@ -11,90 +11,38 @@ namespace BankaAtmUygılaması
         static void Main(string[] args)
         {
 
-            Console.WriteLine("ATM");
-            int pin = 1111;
+           Console.WriteLine("ATM");
+Console.WriteLine("Lütfen pini girin:");
 
-            Console.WriteLine("Pini girin!");
-            int imput_pin = Convert.ToInt32(Console.ReadLine());
+string pin = "1111";
 
-            if (imput_pin==pin)
-            {
+int attempts = 3;
 
-                Console.WriteLine("ATM'ye Hoş Geldiniz!");
-                Console.ReadLine();
+while (attempts > 0)
+{
+    string imput_pin = Console.ReadLine();  
 
-            }
+    if (imput_pin == pin)
+    {
+        Console.WriteLine("Hoş geldiniz!");
+        Thread.Sleep(3000);
+        return;
 
+    }
 
-            else if (imput_pin!=pin)
-            {
+    else if (imput_pin != pin)  
+    {
+        attempts--;
+        Console.WriteLine("Yanlış PIN. Kalan deneme hakkı:" + attempts);
 
-                Console.WriteLine("Pin hatalı lütfen tekrar deneyin. (3 deneme hakkınız var.!)");
-                Console.ReadLine();
+    }
 
-            }
+}
 
-            Console.WriteLine("Pini girin!");
-            int imput_pin2 = Convert.ToInt32(Console.ReadLine());
-
-            if (imput_pin2==pin)
-            {
-
-                Console.WriteLine("ATM'ye Hoş Geldiniz!");
-                Console.ReadLine();
-
-            }
-
-            else if (imput_pin2 != pin)
-            {
-
-                Console.WriteLine("Pin hatalı lütfen tekrar deneyin. (2 deneme hakkınız var!)");
-                Console.ReadLine();
-
-            }
+Console.WriteLine("Hesabınız bloke oldu, lütfen bankanızla iletişime geçin.");
 
 
-            Console.WriteLine("Pini girin!");
-            int imput_pin3 = Convert.ToInt32(Console.ReadLine());
-
-            if (imput_pin3 == pin)
-            {
-
-                Console.WriteLine("ATM'ye Hoş Geldiniz!");
-                Console.ReadLine();
-
-            }
-
-            else if (imput_pin3 != pin)
-            {
-
-                Console.WriteLine("Pin hatalı lütfen tekrar deneyin. (1 deneme hakkınız var!)");
-                Console.ReadLine();
-
-            }
-
-
-            Console.WriteLine("Pini girin!");
-            int imput_pin4 = Convert.ToInt32(Console.ReadLine());
-
-            if (imput_pin4 == pin)
-            {
-
-                Console.WriteLine("Hesabınız bloke oldu. Lütfen bankanızla iletişime geçin.");
-                Console.ReadLine();
-
-            }
-
-            else if (imput_pin4 != pin)
-            {
-
-                Console.WriteLine("Hesabınız bloke oldu. Lütfen bankanızla iletişime geçin.");
-                Console.ReadLine();
-
-            }
-
-
-            Console.ReadLine();
+Console.ReadLine();
 
 
         }
